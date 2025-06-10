@@ -150,7 +150,7 @@
 &f1_brightness_mod  &f2_brightness_mod  &kp F3            &kp F4             &kp F5          &kp F6                          &f7_music_prev_mod  &f8_music_play_pause_mod  &f9_music_next_mod  &f10_audio_vol_mute_mod  &f11_audio_vol_dec_mod  &f12_audio_vol_inc_mod
 &kp GRAVE           &kp EXCL            &kp AT            &kp HASH           &kp DOLLAR      &kp PRCNT                       &kp CARET           &kp AMPS                  &kp KP_MULTIPLY     &kp LPAR                 &kp RPAR                &kp TILDE
 &trans              &trans              &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RBRC                        &trans              &kp KP_EQUAL              &kp KP_PLUS         &kp KP_MINUS             &kp UNDERSCORE          &kp BACKSLASH
-&trans              &bt BT_SEL 0        &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3    &bt BT_SEL 4  &trans    &trans  &trans              &trans                    &trans              &trans                   &trans                  &kp PIPE
+&bt BT_CLR          &bt BT_SEL 0        &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3    &bt BT_SEL 4  &trans    &trans  &trans              &trans                    &trans              &trans                   &trans                  &kp PIPE
                                                           &trans             &trans          &trans        &trans    &trans  &trans              &trans                    &bt BT_CLR
             >;
         };
