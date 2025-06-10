@@ -6,68 +6,153 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    combos { compatible = "zmk,combos"; };
+
+    behaviors {
+        ctrl_n_next: ctrl_n_next {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CTRL_N_NEXT";
+            bindings = <&kp N>, <&kp DOWN_ARROW>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        ctrl_b_back: ctrl_b_back {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CTRL_B_BACK";
+            bindings = <&kp B>, <&kp LEFT_ARROW>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        ctrl_f_forward: ctrl_f_forward {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CTRL_F_FORWARD";
+            bindings = <&kp F>, <&kp RIGHT_ARROW>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        ctrl_p_prev: ctrl_p_prev {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CTRL_P_PREV";
+            bindings = <&kp P>, <&kp UP_ARROW>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        ctrl_h_del: ctrl_h_del {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CTRL_H_DEL";
+            bindings = <&kp H>, <&kp BACKSPACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        f1_brightness_mod: f1_brightness_mod {
+            compatible = "zmk,behavior-mod-morph";
+            label = "F1_BRIGHTNESS_MOD";
+            bindings = <&kp F1>, <&kp F14>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RGUI)>;
+        };
+
+        f2_brightness_mod: f2_brightness_mod {
+            compatible = "zmk,behavior-mod-morph";
+            label = "F2_BRIGHTNESS_MOD";
+            bindings = <&kp F2>, <&kp F15>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RGUI)>;
+        };
+
+        f7_music_prev_mod: f7_music_prev_mod {
+            compatible = "zmk,behavior-mod-morph";
+            label = "F7_MUSIC_PREV_MOD";
+            bindings = <&kp F7>, <&kp C_PREVIOUS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        f8_music_play_pause_mod: f8_music_play_pause_mod {
+            compatible = "zmk,behavior-mod-morph";
+            label = "F8_MUSIC_PLAY_PAUSE_MOD";
+            bindings = <&kp F8>, <&kp C_PLAY_PAUSE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        f9_music_next_mod: f9_music_next_mod {
+            compatible = "zmk,behavior-mod-morph";
+            label = "F9_MUSIC_NEXT_MOD";
+            bindings = <&kp F9>, <&kp C_NEXT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        f10_audio_vol_mute_mod: f10_audio_vol_mute_mod {
+            compatible = "zmk,behavior-mod-morph";
+            label = "F10_AUDIO_VOL_MUTE_MOD";
+            bindings = <&kp F10>, <&kp C_MUTE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        f11_audio_vol_dec_mod: f11_audio_vol_dec_mod {
+            compatible = "zmk,behavior-mod-morph";
+            label = "F11_AUDIO_VOL_DEC_MOD";
+            bindings = <&kp F11>, <&kp C_VOL_DN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        f12_audio_vol_inc_mod: f12_audio_vol_inc_mod {
+            compatible = "zmk,behavior-mod-morph";
+            label = "F12_AUDIO_VOL_INC_MOD";
+            bindings = <&kp F12>, <&kp C_VOL_UP>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
-            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
-            // |  CTRL |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-            // | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-            //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
-
+            display-name = "Base";
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                         &kp N6  &kp N7    &kp N8         &kp N9   &kp N0    &kp GRAVE
-&kp TAB    &kp Q   &kp W   &kp E     &kp R     &kp T                          &kp Y   &kp U     &kp I          &kp O    &kp P     &kp MINUS
-&kp LCTRL  &kp A   &kp S   &kp D     &kp F     &kp G                          &kp H   &kp J     &kp K          &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X   &kp C     &kp V     &kp B   &kp LBKT     &kp RBKT  &kp N   &kp M     &kp COMMA      &kp DOT  &kp FSLH  &kp RSHFT
-                           &kp LALT  &kp LGUI  &mo 1   &kp SPACE    &kp RET   &mo 2   &kp BSPC  &kp RIGHT_ALT
+&kp ESC    &kp N1         &kp N2     &kp N3      &kp N4        &kp N5                         &kp N6           &kp N7             &kp N8     &kp N9        &kp N0  &kp BACKSPACE
+&kp TAB    &kp SQT        &kp COMMA  &kp PERIOD  &ctrl_p_prev  &kp Y                          &ctrl_f_forward  &kp G              &kp C      &kp R         &kp L   &kp SLASH
+&kp LCTRL  &kp A          &kp O      &kp E       &kp U         &kp I                          &kp D            &ctrl_h_del        &kp T      &ctrl_n_next  &kp S   &kp RSHFT
+&kp LSHFT  &kp SEMICOLON  &kp Q      &kp J       &kp K         &kp X   &kp LBKT     &kp RBKT  &ctrl_b_back     &kp M              &kp W      &kp V         &kp Z   &kp RSHFT
+                                     &kp LALT    &kp LGUI      &mo 1   &kp ENTER    &mo 1     &kp SPACE        &kp RIGHT_COMMAND  &kp RCTRL
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         lower_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
-            // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
-            // |   `   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   ~   |
-            // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
-            //                     |      |      |      |        |  |       |      |       |       |
-
+            display-name = "Lower";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans     &trans     &trans    &trans    &trans
-&kp F1      &kp F2            &kp F3             &kp F4             &kp F5        &kp F6                          &kp F7     &kp F8     &kp F9     &kp F10   &kp F11   &kp F12
-&kp GRAVE   &kp EXCL          &kp AT             &kp HASH           &kp DOLLAR    &kp PRCNT                       &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp TILDE
-&trans      &ext_power EP_ON  &ext_power EP_OFF  &ext_power EP_TOG  &trans        &trans        &trans    &trans  &trans     &kp MINUS  &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE
-                                                 &trans             &trans        &trans        &trans    &trans  &trans     &trans     &trans
+&f1_brightness_mod  &f2_brightness_mod  &kp F3            &kp F4             &kp F5          &kp F6                          &f7_music_prev_mod  &f8_music_play_pause_mod  &f9_music_next_mod  &f10_audio_vol_mute_mod  &f11_audio_vol_dec_mod  &f12_audio_vol_inc_mod
+&kp GRAVE           &kp EXCL            &kp AT            &kp HASH           &kp DOLLAR      &kp PRCNT                       &kp CARET           &kp AMPS                  &kp KP_MULTIPLY     &kp LPAR                 &kp RPAR                &kp TILDE
+&trans              &trans              &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RBRC                        &trans              &kp KP_EQUAL              &kp KP_PLUS         &kp KP_MINUS             &kp UNDERSCORE          &kp BACKSLASH
+&trans              &bt BT_SEL 0        &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3    &bt BT_SEL 4  &trans    &trans  &trans              &trans                    &trans              &trans                   &trans                  &kp PIPE
+                                                          &trans             &trans          &trans        &trans    &trans  &trans              &trans                    &bt BT_CLR
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
-
-        raise_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
-            // |   F1  |  F2 |  F3 |  F4  |  F5  |  F6  |                   |      |   <-  |   v   |  ^   |  ->   |       |
-            // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
-            //                     |      |      |      |        |  |       |      |       |       |
-
-            bindings = <
-&trans     &trans  &trans  &trans   &trans   &trans                     &trans       &trans     &trans     &trans    &trans     &trans
-&kp GRAVE  &kp N1  &kp N2  &kp N3   &kp N4   &kp N5                     &kp N6       &kp N7     &kp N8     &kp N9    &kp N0     &trans
-&kp F1     &kp F2  &kp F3  &kp F4   &kp F5   &kp F6                     &trans       &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT  &trans
-&kp F7     &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &trans  &kp KP_PLUS  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT   &kp BSLH
-                           &trans   &trans   &trans   &trans    &trans  &trans       &trans     &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
