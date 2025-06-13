@@ -136,11 +136,11 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp ESC    &kp N1         &kp N2     &kp N3      &kp N4        &kp N5                          &kp N6           &kp N7             &kp N8     &kp N9        &kp N0  &kp BACKSPACE
-&kp TAB    &kp SQT        &kp COMMA  &kp PERIOD  &ctrl_p_prev  &kp Y                           &ctrl_f_forward  &kp G              &kp C      &kp R         &kp L   &kp SLASH
-&kp LCTRL  &kp A          &kp O      &kp E       &kp U         &kp I                           &kp D            &ctrl_h_del        &kp T      &ctrl_n_next  &kp S   &mo 1
-&kp LSHFT  &kp SEMICOLON  &kp Q      &kp J       &kp K         &kp X   &kp LBKT     &kp RBKT   &ctrl_b_back     &kp M              &kp W      &kp V         &kp Z   &kp RSHFT
-                                     &kp LALT    &kp CAPSLOCK  &mo 1   &kp SPACE    &kp ENTER  &kp BACKSPACE    &kp RIGHT_COMMAND  &kp RCTRL
+&kp ESC    &kp N1         &kp N2     &kp N3      &kp N4        &kp N5                         &kp N6           &kp N7             &kp N8     &kp N9        &kp N0  &kp MINUS
+&kp TAB    &kp SQT        &kp COMMA  &kp PERIOD  &ctrl_p_prev  &kp Y                          &ctrl_f_forward  &kp G              &kp C      &kp R         &kp L   &kp SLASH
+&kp LCTRL  &kp A          &kp O      &kp E       &kp U         &kp I                          &kp D            &ctrl_h_del        &kp T      &ctrl_n_next  &kp S   &kp ENTER
+&kp LSHFT  &kp SEMICOLON  &kp Q      &kp J       &kp K         &kp X   &kp LBKT     &kp RBKT  &ctrl_b_back     &kp M              &kp W      &kp V         &kp Z   &kp RSHFT
+                                     &kp LALT    &kp CAPSLOCK  &mo 1   &kp SPACE    &kp DEL   &kp RIGHT_ALT    &kp RIGHT_COMMAND  &kp RCTRL
             >;
         };
 
