@@ -136,11 +136,11 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp ESC    &kp N1         &kp N2     &kp N3      &kp N4        &kp N5                              &kp N6           &kp N7             &kp N8     &kp N9        &kp N0  &kp MINUS
-&kp TAB    &kp SQT        &kp COMMA  &kp PERIOD  &lalt_p_prev  &kp Y                               &lalt_f_forward  &kp G              &kp C      &kp R         &kp L   &kp SLASH
-&kp LCTRL  &kp A          &kp O      &kp E       &kp U         &kp I                               &kp D            &lalt_h_del        &kp T      &lalt_n_next  &kp S   &kp ENTER
-&kp LSHFT  &kp SEMICOLON  &kp Q      &kp J       &kp K         &kp X   &kp LBKT     &kp RBKT       &lalt_b_back     &kp M              &kp W      &kp V         &kp Z   &kp RSHFT
-                                     &kp LALT    &kp CAPSLOCK  &mo 1   &kp SPACE    &kp BACKSPACE  &kp RIGHT_ALT    &kp RIGHT_COMMAND  &kp RCTRL
+&kp ESC    &kp N1         &kp N2     &kp N3      &kp N4        &kp N5                              &kp N6  &kp N7             &kp N8     &kp N9  &kp N0  &kp MINUS
+&kp TAB    &kp SQT        &kp COMMA  &kp PERIOD  &kp P         &kp Y                               &kp F   &kp G              &kp C      &kp R   &kp L   &kp SLASH
+&kp LCTRL  &kp A          &kp O      &kp E       &kp U         &kp I                               &kp D   &kp H              &kp T      &kp N   &kp S   &kp ENTER
+&kp LSHFT  &kp SEMICOLON  &kp Q      &kp J       &kp K         &kp X   &kp LBKT     &kp RBKT       &kp B   &kp M              &kp W      &kp V   &kp Z   &kp RSHFT
+                                     &kp LALT    &kp CAPSLOCK  &mo 1   &kp SPACE    &kp BACKSPACE  &mo 2   &kp RIGHT_COMMAND  &kp RCTRL
             >;
         };
 
